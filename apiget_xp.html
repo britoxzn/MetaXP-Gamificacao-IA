@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Progresso | MetaXP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos... (sem alteração, você já os tem acima) */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-card">
+            <div class="header">
+                <div class="avatar" id="user-avatar">?</div>
+                <h1 class="username" id="username">Carregando...</h1>
+                <div class="level" id="user-level">Nível 0</div>
+            </div>
+            
+            <div class="content">
+                <div id="content">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Carregando seu progresso...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch para pegar os dados do progresso do usuário
+        fetch('progresso_api.php')
+            .then(response => {
+                if (response.status === 401) {
+                    // Redireciona para login se não autenticado
+                    window.location.href = 'login.php';
+                    return;
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    showError(data);
+                    return;
+                }
+
+                // Atualiza os elementos com os dados de progresso
+                document.getElementById('username').textContent = data.username || 'Usuário';
+                document.getElementById('user-level').textContent = 'Nível: ' + data.level;
+                document.getElementById('user-avatar').textContent = data.username.charAt(0).toUpperCase();
+                
+                // Lógica de renderização do progresso (exemplo)
+                let progressBar = document.querySelector('.progress-bar .progress-fill');
+                progressBar.style.width = `${data.progress}%`; // Atualiza o progresso
+            })
+            .catch(error => {
+                console.error('Erro ao carregar os dados de progresso:', error);
+            });
+
+        // Função para exibir erros
+        function showError(data) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <div class="error">
+                    <strong>Erro:</strong> ${data.message}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

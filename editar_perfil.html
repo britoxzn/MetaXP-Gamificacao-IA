@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - MetaXP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin-top: 50px;
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-header h2 {
+            color: #4e73df;
+        }
+        .card {
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #4e73df;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .btn-primary {
+            background-color: #4e73df;
+            border-color: #4e73df;
+            border-radius: 25px;
+        }
+        .btn-primary:hover {
+            background-color: #1cc88a;
+            border-color: #1cc88a;
+        }
+        .btn-secondary {
+            background-color: #cccccc;
+            border-color: #cccccc;
+            border-radius: 25px;
+        }
+        .btn-secondary:hover {
+            background-color: #b0b0b0;
+            border-color: #b0b0b0;
+        }
+        .form-control {
+            border-radius: 25px;
+            padding: 15px;
+        }
+        .card-body {
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .meta-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <h2>Editar Perfil - MetaXP</h2>
+            <p>Ajuste suas informações pessoais para otimizar suas metas e aumentar sua produtividade.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Informações Pessoais
+            </div>
+            <div class="card-body">
+                <form action="atualizar_perfil.php" method="POST">
+                    <div class="form-group mb-3">
+                        <label for="first_name">Primeiro Nome</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" value="[Nome do Usuário]" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_name">Sobrenome</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" value="[Sobrenome do Usuário]" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" value="[Email do Usuário]" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="password">Nova Senha (Deixe em branco para manter a atual)</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="repeat_password">Repetir Nova Senha</label>
+                        <input type="password" class="form-control" id="repeat_password" name="repeat_password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Atualizar Perfil</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Suas Metas Criadas
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled" id="lista-metas">
+                    <li class="meta-item">
+                        <span>Meta de Exemplo: Estudar 30 minutos de programação</span>
+                        <a href="#" class="btn btn-sm btn-primary">Editar</a>
+                    </li>
+                </ul>
+                <div class="text-center mt-3">
+                    <a href="criar-meta.html" class="btn btn-primary">Criar Nova Meta</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="perfil.html" class="btn btn-secondary">Voltar ao Perfil</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Este é apenas um exemplo. Em um cenário real, você faria uma requisição para a sua API
+            const metas = [
+                { id: 1, descricao: "Ler 20 páginas de um livro por dia" },
+                { id: 2, descricao: "Fazer 30 minutos de exercícios 5 vezes por semana" },
+                { id: 3, descricao: "Organizar a caixa de entrada de e-mails" }
+            ];
+
+            const listaMetas = document.getElementById('lista-metas');
+            listaMetas.innerHTML = ''; // Limpa o conteúdo de exemplo
+
+            metas.forEach(meta => {
+                const li = document.createElement('li');
+                li.classList.add('meta-item');
+                li.innerHTML = `
+                    <span>${meta.descricao}</span>
+                    <div>
+                        <a href="editar-meta.html?id=${meta.id}" class="btn btn-sm btn-primary">Editar</a>
+                        <button class="btn btn-sm btn-danger" onclick="deletarMeta(${meta.id})">Excluir</button>
+                    </div>
+                `;
+                listaMetas.appendChild(li);
+            });
+        });
+
+        function deletarMeta(id) {
+            alert('Ação de exclusão da meta ' + id + ' seria implementada aqui!');
+            // Em um cenário real, você faria uma requisição DELETE para a sua API
+        }
+    </script>
+</body>
+</html>

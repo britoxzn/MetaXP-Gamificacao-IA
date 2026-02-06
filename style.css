@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #6c5ce7; /* Cor primária */
+    --secondary-color: #a29bfe; /* Cor secundária */
+    --accent-color: #00cec9; /* Cor de destaque */
+    --dark-color: #2d3436; /* Cor escura para texto e elementos principais */
+    --light-color: #f5f6fa; /* Cor de fundo clara */
+    --success-color: #00b894; /* Cor de sucesso */
+    --warning-color: #fdcb6e; /* Cor de aviso */
+    --danger-color: #d63031; /* Cor de erro */
+}
+
+body.app-theme {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e limpa */
+    background-color: var(--light-color); /* Cor de fundo clara */
+    color: var(--dark-color); /* Cor do texto */
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.app-header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color); /* Hover para os links */
+}
+
+/* Cards de Metas */
+.goal-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.goal-card h3 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 0.8rem;
+}
+
+.goal-card p {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+/* Barra de Progresso Gamificada */
+.xp-progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.xp-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+/* Botões de Ação */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: var(--light-color);
+    border-color: var(--dark-color);
+    color: var(--dark-color);
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .goal-card {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
