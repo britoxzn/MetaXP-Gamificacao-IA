@@ -1,34 +1,30 @@
-# 🚀 MetaXP: Planejamento de Metas com Gamificação e IA
+# MetaXP: Planejamento Pessoal com Gamificação e IA 🚀
 
-> **Status:** 🚧 Em Desenvolvimento (Projeto Integrador)
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![PHP](https://img.shields.io/badge/Backend-PHP-777BB4)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1)
+![AI](https://img.shields.io/badge/Integration-OpenAI_API-412991)
 
-O **MetaXP** é uma plataforma inovadora projetada para transformar a produtividade pessoal em uma experiência engajadora. Utilizando conceitos de **Gamificação** (como XP, níveis e recompensas) integrados a um assistente de **Inteligência Artificial**, o sistema ajuda usuários a definirem, acompanharem e conquistarem seus objetivos de vida.
+> **Projeto Integrador** desenvolvido para o curso de Análise e Desenvolvimento de Sistemas.
 
-## 🎯 Objetivo
-Resolver o problema da falta de motivação e clareza no planejamento pessoal, transformando a "lista de tarefas" chata em uma jornada de evolução do personagem (você!).
+## 🎯 Sobre o Projeto
+O **MetaXP** é uma plataforma web que transforma o planejamento de metas pessoais em uma experiência gamificada (RPG). O sistema utiliza **Inteligência Artificial** para analisar os objetivos do usuário e sugerir cronogramas realistas, quebrando grandes metas em pequenas "quests" diárias.
 
-## ✨ Funcionalidades Principais
-- 🎮 **Sistema de XP e Níveis:** Cada meta cumprida gera pontos de experiência (XP) que fazem o usuário subir de nível.
-- 🤖 **Mentor IA:** Um assistente inteligente analisa o progresso e sugere ajustes nas metas para torná-las mais realistas (SMART).
-- 📊 **Dashboard Gamificado:** Visualização de progresso com barras de experiência, badges e conquistas desbloqueáveis.
-- 📅 **Planejamento Inteligente:** Organização de metas de curto, médio e longo prazo.
+## 🛠️ Funcionalidades Principais
+- **Gamificação:** Sistema de XP e Níveis. Ao concluir tarefas, o usuário ganha pontos e desbloqueia conquistas.
+- **Assistente de IA:** Integração com API para sugerir a quebra de metas complexas em passos menores.
+- **Dashboard:** Visualização gráfica do progresso (Barras de XP, Gráficos de consistência).
+- **CRUD Completo:** Gestão total de metas, categorias e perfil de usuário.
 
-## 🛠️ Tecnologias Utilizadas
-- **Linguagem:** Python (Backend e Lógica de IA)
-- **Banco de Dados:** SQL (Gestão de usuários e progresso)
-- **Frontend:** [Se tiver, coloque aqui: ex: HTML5/CSS3 ou React]
-- **Conceitos:** Engenharia de Software, Lógica de Programação, UX Design.
+## 💻 Tecnologias Utilizadas
+- **Front-end:** HTML5, CSS3 (Responsivo), JavaScript.
+- **Back-end:** PHP (Hospedado no InfinityFree).
+- **Banco de Dados:** MySQL.
+- **Hospedagem:** InfinityFree.
 
-## 🚀 Como Rodar o Projeto
-```bash
-# Clone este repositório
-git clone [https://github.com/britoxzn/MetaXP-Gamificacao-IA.git](https://github.com/britoxzn/MetaXP-Gamificacao-IA.git)
+## 🔗 Link do Projeto (Live Demo)
+Você pode acessar a versão rodando online aqui:
+👉 **[CLIQUE AQUI PARA ACESSAR O METAXP](https://plataforma-de-planejamento.great-site.net/register.php)**
 
-# Entre na pasta
-cd MetaXP-Gamificacao-IA
 
-# Instale as dependências (Exemplo)
-pip install -r requirements.txt
-
-# Execute o projeto
-python main.py
+Developed by **Luis Brito**
