@@ -11,7 +11,6 @@
 O **MetaXP** é uma plataforma web inovadora que visa combater a procrastinação transformando o gerenciamento de metas pessoais em um **RPG da vida real**.
 
 O sistema utiliza **Inteligência Artificial** para atuar como um "Mentor Virtual", analisando os objetivos do usuário e sugerindo cronogramas realistas, quebrando grandes metas em pequenas "quests" diárias para facilitar a execução.
-<img width="1920" height="998" alt="{7BE2DA74-FD4E-4F7D-9AB4-AC8ECF3B14AA}" src="https://github.com/user-attachments/assets/0bf61705-b3f4-4d33-8231-1865724ef24b" />
 
 
 ## ✨ Funcionalidades Principais
@@ -33,6 +32,7 @@ O sistema utiliza **Inteligência Artificial** para atuar como um "Mentor Virtua
 - Cadastro seguro de usuários.
 - Criação, Edição e Exclusão de Metas e Tarefas.
 - Dashboard administrativo para controle pessoal.
+<img width="1920" height="998" alt="{7BE2DA74-FD4E-4F7D-9AB4-AC8ECF3B14AA}" src="https://github.com/user-attachments/assets/0bf61705-b3f4-4d33-8231-1865724ef24b" />
 
 ## 🛠️ Tecnologias Utilizadas
 
